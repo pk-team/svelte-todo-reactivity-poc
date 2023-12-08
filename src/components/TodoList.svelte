@@ -1,11 +1,13 @@
 <script lang="ts">
 	import type { Todo } from "$lib/types";
+	import TodoInput from "./TodoInput.svelte";
 	import TodoItem from "./TodoItem.svelte";
     export let todos: Todo[]
 </script>
 
 
 <div class="cards">
+    <TodoInput on:add />
     {#each todos as todo}
         <TodoItem on:delete {todo} />
     {/each}
